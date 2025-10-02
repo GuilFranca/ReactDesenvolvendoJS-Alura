@@ -1,6 +1,6 @@
 import './Banner.css';
 
-function Banner() {
+export const Banner = () => {
     // JSX -> Parece HTML mas não é
     return (
         <header className='banner'>
