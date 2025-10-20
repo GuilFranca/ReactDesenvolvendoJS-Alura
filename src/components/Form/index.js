@@ -1,6 +1,7 @@
 import './Form.css';
 import TextField from '../TextField';
 import DropdownList from '../DropdownList';
+import Button from '../Button';
 
 const Form = () => {
 
@@ -14,19 +15,28 @@ const Form = () => {
         'Inovação e Gestão'
     ]
 
+    const aoSalvar = (event) => {
+        event.preventDefault();
+        console.log('From enviado');
+    }
+
     return (
 
         <section className='form__section'>
-            <form>
+            <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do seu colaborador</h2>
-                <TextField label="Nome" placeholder="Digite seu nome" />
-                <TextField label="Cargo" placeholder="Digite seu cargo" />
+                <TextField obrigatorio={true} label="Nome" placeholder="Digite seu nome" />
+                <TextField obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" />
                 <TextField label="Imagem" placeholder="Informe o endereço da imagem" />
-                <DropdownList label='Time' items={times}/>
+                <DropdownList obrigatorio={true} label='Time' items={times}/>
+                <Button>
+                    Criar Card
+                </Button>
             </form>
         </section>
 
     )
+
 
 }
 

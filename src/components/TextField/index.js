@@ -1,16 +1,14 @@
 import './TextField.css';
 
 const TextField = (props) => {
-    console.log(props);
+    // console.log(props);
     return (
 
         <div className="text__field">
-            <label>
+            <label> 
                 {props.label}
-                </label>
-            <input placeholder=
-                {props.placeholder}
-            />
+            </label>
+            <input required={props.obrigatorio} placeholder={props.placeholder}/>
         </div>
 
     )
