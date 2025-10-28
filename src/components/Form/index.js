@@ -2,10 +2,11 @@ import './Form.css';
 import TextField from '../TextField';
 import DropdownList from '../DropdownList';
 import Button from '../Button';
+import { useState } from 'react';
 
 const Form = () => {
 
-    const times = [
+    const teams = [
         'Programação',
         'Front-End',
         'Data Science',
@@ -15,24 +16,61 @@ const Form = () => {
         'Inovação e Gestão'
     ]
 
+    const [name, setName] = useState('');
+    const [position, setPosition] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
+    const [team, setTeam] = useState('');
+
     const aoSalvar = (event) => {
         event.preventDefault();
-        console.log('From enviado');
+        console.log('From enviado => ', name, position, imageUrl, team);
     }
 
     return (
 
         <section className='form__section'>
+
             <form onSubmit={aoSalvar}>
+
                 <h2>Preencha os dados para criar o card do seu colaborador</h2>
-                <TextField obrigatorio={true} label="Nome" placeholder="Digite seu nome" />
-                <TextField obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" />
-                <TextField label="Imagem" placeholder="Informe o endereço da imagem" />
-                <DropdownList obrigatorio={true} label='Time' items={times}/>
+
+                <TextField
+                    obrigatorio={true} 
+                    label="Nome" 
+                    placeholder="Digite seu nome" 
+                    inputValue={name}
+                    onChanged={inputValue => setName(inputValue)}
+                />
+
+                <TextField 
+                    obrigatorio={true} 
+                    label="Cargo" 
+                    placeholder="Digite seu cargo" 
+                    inputValue={position}
+                    onChanged={inputValue => setPosition(inputValue)}
+                />
+
+                <TextField 
+                    label="Imagem" 
+                    placeholder="Informe o endereço da imagem" 
+                    inputValue={imageUrl}
+                    onChanged={inputValue => setImageUrl(inputValue)}
+                />
+
+                <DropdownList 
+                    obrigatorio={true} 
+                    label='Time'
+                    items={teams}
+                    inputValue={team}
+                    onChanged={inputValue => setTeam(inputValue)}
+                />
+
                 <Button>
                     Criar Card
                 </Button>
+
             </form>
+
         </section>
 
     )
