@@ -4,7 +4,7 @@ import DropdownList from '../DropdownList';
 import Button from '../Button';
 import { useState } from 'react';
 
-const Form = () => {
+const Form = (props) => {
 
     const teams = [
         'Programação',
@@ -19,11 +19,18 @@ const Form = () => {
     const [name, setName] = useState('');
     const [position, setPosition] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-    const [team, setTeam] = useState('');
+    const [team, setTeam] = useState('Programação');
 
     const aoSalvar = (event) => {
         event.preventDefault();
         console.log('From enviado => ', name, position, imageUrl, team);
+        // Passando um objeto com os valores do colaboradore para determinada props que irá passar para fora do formulário
+        props.onEmployeeRegistered({
+            name,
+            position,
+            imageUrl,
+            team
+        })
     }
 
     return (

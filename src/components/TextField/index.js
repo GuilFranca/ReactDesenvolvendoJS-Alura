@@ -9,7 +9,7 @@ const TextField = (props) => {
 
     const handleTyping = (event) => {
         props.onChanged(event.target.value);
-        console.log(props.inputValue);
+        // console.log(props.inputValue);
     }
 
     return (
