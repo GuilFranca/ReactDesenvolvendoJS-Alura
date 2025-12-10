@@ -2,10 +2,13 @@ import './team.css'
 
 const Team = (props) => {
 
+    // const css = { backgroundColor: props.secondaryColor };
+
     return (
 
-        <section className='team_section'>
-            <h3>{props.name}</h3>
+        <section className='team_section' style={{ backgroundColor: props.secondaryColor }}>
+            {/* <section className='team_section' style={css}> */}
+            <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
         </section>
 
     );

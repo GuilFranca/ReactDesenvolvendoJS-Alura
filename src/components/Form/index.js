@@ -6,16 +6,6 @@ import { useState } from 'react';
 
 const Form = (props) => {
 
-    const teams = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
-
     const [name, setName] = useState('');
     const [position, setPosition] = useState('');
     const [imageUrl, setImageUrl] = useState('');
@@ -67,7 +57,7 @@ const Form = (props) => {
                 <DropdownList 
                     obrigatorio={true} 
                     label='Time'
-                    items={teams}
+                    items={props.teams}
                     inputValue={team}
                     onChanged={inputValue => setTeam(inputValue)}
                 />
