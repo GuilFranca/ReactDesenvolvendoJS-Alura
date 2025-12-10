@@ -21,7 +21,7 @@ const Form = (props) => {
     const [imageUrl, setImageUrl] = useState('');
     const [team, setTeam] = useState('Programação');
 
-    const aoSalvar = (event) => {
+    const onSave = (event) => {
         event.preventDefault();
         console.log('From enviado => ', name, position, imageUrl, team);
         // Passando um objeto com os valores do colaboradore para determinada props que irá passar para fora do formulário
@@ -37,7 +37,7 @@ const Form = (props) => {
 
         <section className='form__section'>
 
-            <form onSubmit={aoSalvar}>
+            <form onSubmit={onSave}>
 
                 <h2>Preencha os dados para criar o card do seu colaborador</h2>
 

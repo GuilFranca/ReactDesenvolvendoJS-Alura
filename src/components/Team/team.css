@@ -1,0 +1,13 @@
+.team_section {
+    text-align: center;
+    padding: 32px;
+    background-color: #D9F7E9;
+}
+
+.team_section h3 {
+    font-size: 32px;
+    border-bottom: 4px solid #57C278;
+    /* Desta forma o nosso H3 irá se comportar como um component inline-block, 
+    fazendo com que a borda do mesmo fique somente no espaço em que o mesmo ocupa */
+    display: inline-block;
+}
