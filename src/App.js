@@ -45,7 +45,7 @@ function App() {
 
   ];
 
-  const [employees, setEmployees] = useState('');
+  const [employees, setEmployees] = useState([]);
 
   const onEmployeeNewAdd = (employee) => {
     console.log(employee)
@@ -60,7 +60,13 @@ function App() {
 
       {/* For each team, a Team tag is created with its information */}
       {/* Para cada time dentro do dicionário teams uma tag Team é criada com as suas devidas informações */}
-      {teams.map(team => <Team key={team.name} name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor}/>)}
+      {teams.map(team => <Team 
+        key={team.name} 
+        name={team.name} 
+        primaryColor={team.primaryColor} 
+        secondaryColor={team.secondaryColor}
+        employees={employees.filter(employee => employee.team === team.name)} // Filtra o colaborador através do nome do time
+      />)}
 
     </div>
   );
