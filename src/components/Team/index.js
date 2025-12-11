@@ -3,27 +3,26 @@ import './Team.css'
 
 const Team = (props) => {
 
-    // const css = { backgroundColor: props.secondaryColor };
-
     return (
 
-        <section className='team-section' style={{ backgroundColor: props.secondaryColor }}>
-            {/* <section className='team_section' style={css}> */}
-            <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
+        // Caso a lista de colaboradores seja maior que zero irá retornar o que está ao lado do &&
+        (props.employees.length) > 0 ? <section className='team-section' style={{ backgroundColor: props.secondaryColor }}>
+                <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
 
-            <div className='team-container'>
+                <div className='team-container'>
 
-                {props.employees.map( employee => <CardEmployee 
-                    name={employee.name}
-                    position={employee.position}
-                    imageUrl={employee.imageUrl}
-                    team={employee.team}
-                    backgroundColor={props.primaryColor}
-                />)}
+                    {props.employees.map( employee => <CardEmployee 
+                        name={employee.name}
+                        position={employee.position}
+                        imageUrl={employee.imageUrl}
+                        team={employee.team}
+                        backgroundColor={props.primaryColor}
+                    />)}
 
-            </div>
+                </div>
 
-        </section>
+            </section>
+            : ''
 
     );
 }

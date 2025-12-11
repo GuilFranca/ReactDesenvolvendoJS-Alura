@@ -20,7 +20,11 @@ const Form = (props) => {
             position,
             imageUrl,
             team
-        })
+        });
+        setName('');
+        setPosition('');
+        setImageUrl('');
+        setTeam('Programação')
     }
 
     return (
@@ -49,7 +53,7 @@ const Form = (props) => {
 
                 <TextField 
                     label="Imagem" 
-                    placeholder="Informe o endereço da imagem" 
+                    placeholder="Informe seu nickname do GitHub" 
                     inputValue={imageUrl}
                     onChanged={inputValue => setImageUrl(inputValue)}
                 />
