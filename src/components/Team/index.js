@@ -1,4 +1,5 @@
-import './team.css'
+import CardEmployee from '../CardEmployee';
+import './Team.css'
 
 const Team = (props) => {
 
@@ -9,6 +10,8 @@ const Team = (props) => {
         <section className='team_section' style={{ backgroundColor: props.secondaryColor }}>
             {/* <section className='team_section' style={css}> */}
             <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
+            <CardEmployee />
+            <CardEmployee />
         </section>
 
     );
