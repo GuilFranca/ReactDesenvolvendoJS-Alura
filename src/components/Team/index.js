@@ -11,7 +11,8 @@ const Team = (props) => {
 
                 <div className='team-container'>
 
-                    {props.employees.map( employee => <CardEmployee 
+                    {props.employees.map( employee => <CardEmployee
+                        key={employee.name}
                         name={employee.name}
                         position={employee.position}
                         imageUrl={employee.imageUrl}

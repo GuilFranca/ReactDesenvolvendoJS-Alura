@@ -51,6 +51,7 @@ function App() {
   const onEmployeeNewAdd = (employee) => {
     console.log(employee)
     // employees.push(employee)
+    // debugger // Instrução para a V8 do chrome para parar o que está acontecendo e eu conseguir fazer o fluxo linha à linha
     setEmployees([...employees, employee]) // adiciona os colaboradores antigos mais o colaborador novo no final
   }
 
