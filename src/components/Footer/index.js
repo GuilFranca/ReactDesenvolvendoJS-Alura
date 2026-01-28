@@ -27,7 +27,7 @@ const Footer = () => {
             </section>
 
             <section>
-                <img src="/images/logo.png"/>
+                <img src="/images/logo.png" alt='Logo Organo'/>
             </section>
 
             <section>
